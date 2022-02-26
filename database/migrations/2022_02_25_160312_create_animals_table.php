@@ -23,6 +23,8 @@ class CreateAnimalsTable extends Migration
             $table->string('location');
             $table->date('birth');
             $table->double('weight', null, 1);
+            $table->integer('age');
+            $table->string('breed');
 
             $table->text('health')->nullable();
             $table->longText('description')->nullable();            
