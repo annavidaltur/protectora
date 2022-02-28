@@ -14,7 +14,18 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
             colors: {            
-                'broccoli': '#88a962',
+                'broccoli': {
+                    '50': '#E2EAD9',
+                    '100': '#D8E3CB',
+                    '200': '#C4D4B1',
+                    '300': '#B0C697',
+                    '400': '#9CB77C',
+                    '500': '#88A962',
+                    '600': '#6C884B',
+                    '700': '#4F6437',
+                    '800': '#324023',
+                    '900': '#161C0F'
+                  },
               },
         },        
     },
