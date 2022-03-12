@@ -14,7 +14,7 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        $animals = Animal::where('specie_id', 1)->latest('id')->paginate(6);
+        $animals = Animal::where('specie_id', 1)->latest('id')->paginate(8);
         return view('animals.index', compact('animals'));
     }
 
