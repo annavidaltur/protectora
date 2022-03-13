@@ -1,7 +1,25 @@
 <div>
-    <h2 class="font-bold text-xl text-broccoli-900">Filtros</h2>
-    <input wire:model="search" class="form-control" placeholder="Buscar..."> 
+    <h2 class="font-bold text-xl text-broccoli-900">Filtros</h2>    
+    
 
+    <fieldset class="mt-3 mb-4">
+            @foreach ($species as $specie)                
+                <x-jet-input type="checkbox" wire:model="filter({{$specie->id}})"/> 
+                <label for="species" class="font-medium text-gray-700">{{$specie->name}}</label>
+                <br>
+            @endforeach
+
+            <x-jet-input type="text" wire:model="search" placeholder="Buscar por nombre..." /> 
+
+            <select name="birth" class="border shadow p-2 bg-white">
+                <option value="">Ordenar por edad</option>
+                <option value="desc" wire:click="birth('desc')" >Más jóvenes primero</option>
+                <option value="asc" wire:click="birth('asc')">Mayores primero</option>
+            </select>
+    </fieldset>
+    
+    
+    @if($animals->count())
     <div class="grid sm:grid-cols-4 grid-cols-1 gap-6">
         @foreach ($animals as $animal)
             @php
@@ -18,7 +36,8 @@
                     </div>
                     <p class="text-gray-700 text-base">
                         <ul>
-                            <li><i class="fa-solid fa-venus-mars"></i> {{$sex}}</li>
+                            <li>{{$animal->specie_id}}</li>
+                            <li>{{$sex}}</li>
                             <li>{{implode('/', array_reverse(explode('-', $animal->birth)))}} ({{$animal->age}} años)</li>
                             <li>Tamaño {{$animal->size}}</li>
                         </ul>
@@ -30,4 +49,7 @@
     <div class="mt-4">
         {{$animals->links()}}
     </div>
+    @else 
+        <p>No se han encontrado resultados</p>
+    @endif
 </div>

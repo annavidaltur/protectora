@@ -14,8 +14,9 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        $animals = Animal::where('specie_id', 1)->latest('id')->paginate(8);
-        return view('animals.index', compact('animals'));
+        // $animals = Animal::where('specie_id', 1)->latest('id')->paginate(8);
+        // $animals = Animal::paginate(4); 
+        return view('animals.index');
     }
 
     /**
@@ -82,5 +83,17 @@ class AnimalController extends Controller
     public function destroy(Animal $animal)
     {
         //
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function filter(Request $request)
+    {
+        return $request;
+        // $animals = Animal::where('specie_id', 1)->latest('id')->paginate(8);
+        // return view('animals.index', compact('animals'));
     }
 }
