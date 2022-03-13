@@ -12,7 +12,7 @@ class AnimalsIndex extends Component
 {
     use WithPagination;
     public $search;
-    public $sort = "birth";
+    public $sort = "id";
     public $direction = "desc";
     // public $filter = array(1, 2);
 
@@ -33,7 +33,8 @@ class AnimalsIndex extends Component
         return view('livewire.animals-index', compact('animals', 'species'));
     }
 
-    public function birth($direction){
+    public function order($sort, $direction){
+        $this->sort = $sort;
         $this->direction = $direction;
     }
 

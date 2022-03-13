@@ -11,10 +11,11 @@
 
             <x-jet-input type="text" wire:model="search" placeholder="Buscar por nombre..." /> 
 
+            <label for="species" class="font-medium text-gray-700">Ordenar por</label>
             <select name="birth" class="border shadow p-2 bg-white">
-                <option value="">Ordenar por edad</option>
-                <option value="desc" wire:click="birth('desc')" >Más jóvenes primero</option>
-                <option value="asc" wire:click="birth('asc')">Mayores primero</option>
+                <option value="iddesc" wire:click="order('id', 'desc')">Recientes</option>
+                <option value="birthdesc" wire:click="order('birth', 'desc')" >Más jóvenes primero</option>
+                <option value="birthasc" wire:click="order('birth', 'asc')">Mayores primero</option>                
             </select>
     </fieldset>
     
@@ -27,17 +28,18 @@
                 else $sex = 'Hembra';   
             @endphp
             <div class="max-w-sm rounded overflow-hidden shadow-lg bg-broccoli-50">
-                <a href="">
+                <a href="">                   
                     <img class="w-full" src="https://placedog.net/500" alt="">
-                </a>
+                </a>  
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2 text-broccoli-900">
-                        <a href="">{{$animal->name}}</a>    
+                        <a href="">{{$animal->name}}</a>   
+                        {{$animal->portada}} 
                     </div>
                     <p class="text-gray-700 text-base">
                         <ul>
-                            <li>{{$animal->specie_id}}</li>
-                            <li>{{$sex}}</li>
+                            <li>#{{$animal->id}}</li>
+                            <li><i class="fa-solid fa-venus-mars"></i>{{$sex}}</li>
                             <li>{{implode('/', array_reverse(explode('-', $animal->birth)))}} ({{$animal->age}} años)</li>
                             <li>Tamaño {{$animal->size}}</li>
                         </ul>
