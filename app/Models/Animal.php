@@ -17,4 +17,9 @@ class Animal extends Model
         $portada = Image::where('portada', 1)->where('imageable_id', $this->id)->first();
         return $portada;
     }
+
+    public function images(){
+        $images = Image::where('imageable_id', $this->id)->orderBy('portada', 'desc')->get();
+        return $images;
+    }
 }

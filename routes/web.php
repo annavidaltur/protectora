@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('animales', [AnimalController::class, 'index'])->name('animals.index');
 
-Route::post('animales', [AnimalController::class, 'filter'])->name('animals.filter');
+Route::get('animales/{animal}', [AnimalController::class, 'show'])->name('animals.show');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
