@@ -47,7 +47,8 @@ class AnimalController extends Controller
      */
     public function show(Animal $animal)
     {
-        return view('animals.show', compact('animal'));
+        $friends = Animal::inRandomOrder()->limit(4)->get();
+        return view('animals.show', compact('animal', 'friends'));
     }
 
     /**

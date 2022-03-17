@@ -96,6 +96,11 @@
         </div>
 
         {{-- Otros perris --}}
-        
+        <h1 class="font-bold text-3xl text-broccoli-700">Mis amigos</h1>  
+        <div class="grid sm:grid-cols-4 grid-cols-1 gap-6">
+            @foreach ($friends as $friend)
+                @livewire('animal-card', ['animal' => $friend])
+            @endforeach
+        </div>
     </div>      
 </x-app-layout>
