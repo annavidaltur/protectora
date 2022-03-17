@@ -1,3 +1,5 @@
+@section('title', "Conoce a $animal->name")
+
 @php 
     if($animal->sex == 'male') $sex = 'Macho';
     else $sex = 'Hembra';
@@ -13,12 +15,6 @@
 @endphp
 
 <x-app-layout>
-    <style>
-        .swiper-button-next::after, .swiper-button-prev::after, .swiper-pagination{
-            content: "";
-        }
-    </style>
-
     <div class="container mx-auto px-8 sm:px-20 lg:px-52 py-8">        
         {{-- Imagen, nombre y descripción --}}
         <div class="grid sm:grid-cols-2 grid-cols-1 gap-6">
@@ -96,11 +92,13 @@
         </div>
 
         {{-- Otros perris --}}
-        <h1 class="font-bold text-3xl text-broccoli-700">Mis amigos</h1>  
-        <div class="grid sm:grid-cols-4 grid-cols-1 gap-6">
-            @foreach ($friends as $friend)
-                @livewire('animal-card', ['animal' => $friend])
-            @endforeach
+        <div class="mt-10">
+            <h1 class="font-bold text-3xl text-broccoli-700">Mis amigos</h1>  
+            <div class="grid sm:grid-cols-4 grid-cols-1 gap-6 mt-4">
+                @foreach ($friends as $friend)
+                    @livewire('animal-card', ['animal' => $friend])
+                @endforeach
+            </div>
         </div>
     </div>      
 </x-app-layout>

@@ -27,14 +27,28 @@
         <!-- Enlaces --> 
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">            
-            <a href="#" class="bg-white text-broccoli-600 px-3 py-2 rounded-full text-sm font-medium" aria-current="page">Home</a>
+            <a href="{{route('home')}}" 
+              class="text-white hover:bg-white/50 hover:text-broccoli-700 px-3 py-2 rounded-full text-sm font-medium
+              {{request()->routeIs('home') ? 'active' : ''}}" 
+              aria-current="page">
+              Home
+            </a>
 
-            <a href="#" class="text-white hover:bg-white/50 hover:text-broccoli-700 px-3 py-2 rounded-full text-sm font-medium">Nuestros amigos</a>
+            <a href="{{route('animals.index')}}" 
+              class="text-white hover:bg-white/50 hover:text-broccoli-700 px-3 py-2 rounded-full text-sm font-medium
+              {{request()->routeIs('animals.*') ? 'active' : ''}}">
+              Nuestros animales
+            </a>
 
             <a href="#" class="text-white hover:bg-white/50 hover:text-broccoli-700 px-3 py-2 rounded-full text-sm font-medium">¿Nos ayudas?</a>
 
             <a href="#" class="text-white hover:bg-white/50 hover:text-broccoli-700 px-3 py-2 rounded-full text-sm font-medium">Nosotras</a>
             
+            <a href="{{route('contactanos.index')}}" 
+              class="text-white hover:bg-white/50 hover:text-broccoli-700 px-3 py-2 rounded-full text-sm font-medium
+              {{request()->routeIs('contactanos.index') ? 'active' : ''}}">
+              Contáctanos
+            </a>
             @auth
               <!-- Profile dropdown -->
                 <div class="ml-3 relative" x-data="{ open: false }"> 
@@ -71,7 +85,7 @@
       <div class="px-2 pt-2 pb-3 space-y-1">
         <a href="#" class="bg-white text-broccoli-600 block px-3 py-2 rounded-full text-base font-medium" aria-current="page">Home</a>
 
-        <a href="#" class="text-white hover:bg-white/50 hover:text-broccoli-700 block px-3 py-2 rounded-full text-base font-medium">Nuestros amigos</a>
+        <a href="{{route('animals.index')}}" class="text-white hover:bg-white/50 hover:text-broccoli-700 block px-3 py-2 rounded-full text-base font-medium">Nuestros animales</a>
         
         <a href="#" class="text-white hover:bg-white/50 hover:text-broccoli-700 block px-3 py-2 rounded-full text-base font-medium">¿Nos ayudas?</a>
 
