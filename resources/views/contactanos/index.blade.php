@@ -8,9 +8,9 @@
             <div>
                 <h1 class="text-xl font-bold text-broccoli-700 mb-2">Ven a visitarnos</h1>
                 <ul>
-                    <li><i class="fa-solid fa-phone" style="color:#5c2e23"></i> +34 628 11 22 33</li>
-                    <li><i class="fa-solid fa-envelope" style="color:#5c2e23"></i> admin@protectora.es</li>
-                    <li><i class="fa-solid fa-location-dot" style="color:#5c2e23"></i> C/Falsa 123, 46702 Valencia</li>
+                    <li class="py-1"><i class="fa-solid fa-phone" style="color:#5c2e23"></i> +34 628 11 22 33</li>
+                    <li class="py-1"><i class="fa-solid fa-envelope" style="color:#5c2e23"></i> info@protectora.es</li>
+                    <li class="py-1"><i class="fa-solid fa-location-dot" style="color:#5c2e23"></i> C/Falsa 123, 46702 Valencia</li>
                 </ul>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41530.56819718778!2d-0.3678395389979504!3d39.3159565661633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61b4c0cef6b643%3A0xfb1cc4553bca4d04!2sTancat%20de%20Milia!5e0!3m2!1ses!2ses!4v1647532865459!5m2!1ses!2ses" class="w-full" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>

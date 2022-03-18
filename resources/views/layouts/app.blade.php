@@ -32,10 +32,10 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased h-full">
         <x-jet-banner />
 
-        <div class="bg-white">
+        <div class="bg-white ">
             @livewire('navigation')            
 
             <!-- Page Content -->
