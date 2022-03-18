@@ -85,7 +85,7 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
@@ -245,6 +245,20 @@ return [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
+        ],
+        [
+            'text'        => 'Dashboard',
+            'route'         => 'admin.home',
+            'icon'        => 'fas fa-tachometer-alt fa-fw',  
+            // 'can'       => 'admin.home',                      
+        ],
+        [
+            'text' => 'Especies',
+            'route'  => 'admin.species.index',
+            'icon' => 'fas fa-book',
+            'active' => ['admin/species/*'],
+            // 'can'       => 'admin.categories.index',
+
         ],
         [
             'text'        => 'pages',
